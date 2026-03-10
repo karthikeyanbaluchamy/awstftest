@@ -11,7 +11,7 @@ permissions:
 jobs:
   ere-validate-deploy:
 
-    runs-on: self-hosted-vm
+    runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code in repository
@@ -88,7 +88,7 @@ jobs:
   approval:
     name: Manual Approval
     needs: ere-validate-deploy
-    runs-on: self-hosted-vm
+    runs-on: ubuntu-latest
     environment:
       name: prod
 
@@ -99,7 +99,7 @@ jobs:
   deploy:
     name: Terraform Apply
     needs: approval
-    runs-on: self-hosted-vm
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code in repository
