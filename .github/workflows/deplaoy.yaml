@@ -113,7 +113,7 @@ jobs:
       - name: Configure AWS credentials for Dev/Test (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.ROLE_ARN }}
+          role-to-assume: arn:aws:iam::905418049972:role/ec2TerraformExecutionRole-production
           role-session-name: GitHubActions-${{ github.run_id }}
           aws-region: ${{ env.AWS_REGION }}
 
